@@ -114,7 +114,7 @@ def run():
                 price = price * multiplier
         
         # Helai Calculations 140 Cantel S
-        elif category == 'Smokring/Kronille' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard'):
+        elif category == 'Cantel S' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard'):
             if decimal > 0 :
                 val = math.floor(helai) + 1
             else:
