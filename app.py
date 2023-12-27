@@ -11,8 +11,7 @@ def run():
     st.title('Hitungan Custom Gorden JJ Interior Collections PER Jendela')
     with st.form(key='form parameters'):
         category = st.selectbox('Tipe Gorden', ('Smokring/Kronille', 'Cantel S', 'Vitrase'))
-        if category != 'Vitrase':
-            material = st.selectbox('Bahan Gorden', ('Blackout', 'Linen Blackout', 'Juliet', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle'))
+        material = st.selectbox('Bahan Gorden', ('Blackout', 'Linen Blackout', 'Juliet', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle', 'Vitrase'))
         lebar = st.number_input('Lebar', 0, 9999, 130, help='Ukuran dalam cm')
         tinggi = st.number_input('Tinggi', 0, 9999, 230, help='Ukuran dalam cm')
         
