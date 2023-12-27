@@ -10,7 +10,7 @@ st.set_page_config(
 def run():
     st.title('Hitungan Custom Gorden JJ Interior Collections PER Jendela')
     with st.form(key='form parameters'):
-        category = st.selectbox('Tipe Gorden', ('Smokring/Kronille', 'Cantel S', 'Vitrase'))
+        category = st.selectbox('Tipe Gorden', ('Smokring', 'Kronille', 'Cantel S', 'Vitrase'))
         material = st.selectbox('Bahan Gorden', ('Blackout', 'Linen Blackout', 'Juliet', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle', 'Vitrase'))
         lebar = st.number_input('Lebar', 0, 9999, 130, help='Ukuran dalam cm')
         tinggi = st.number_input('Tinggi', 0, 9999, 230, help='Ukuran dalam cm')
@@ -31,6 +31,8 @@ def run():
         otis = 165000
         firework = 165000
         waffle = 165000
+        klinen = 100000
+        kblackout = 120000
         
         # Base Calculations
         helai = lebar / 70
@@ -53,8 +55,8 @@ def run():
         else:
             multiplier = 1.25
         
-        # Helai Calculations NON 140 Smokring/Kronille
-        if category == 'Smokring/Kronille' and (material == 'Blackout' or material == 'Linen Blackout' or material == 'Juliet' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
+        # Helai Calculations NON 140 Smokring
+        if category == 'Smokring' and (material == 'Blackout' or material == 'Linen Blackout' or material == 'Juliet' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
             if decimal > 3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
@@ -74,8 +76,8 @@ def run():
                 price = linen * val
                 price = price * multiplier
         
-        # Helai Calculations 140 Smokring/Kronille
-        elif category == 'Smokring/Kronille' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard'):
+        # Helai Calculations 140 Smokring
+        elif category == 'Smokring' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard'):
             if decimal < 4:
                 val = math.floor(helai)
             else:
@@ -136,6 +138,36 @@ def run():
             vhelai = lebar / 100
             vhelai = round(vhelai, 1)
             price = 115000 * vhelai
+            price = price * multiplier
+        
+        # Kronille Calculations
+        elif category == 'Kronille' and (material == 'Linen Blackout' or material == 'Linen Non Blackout' or material == 'Blackout'):
+            if decimal > 3 or oddeven == 1:
+                val = math.ceil(helai/2.)*2
+            else:
+                val = math.floor(helai)
+            
+            # Calculations
+            if material == 'Blackout':
+                price = kblackout * val
+                price = price * multiplier
+            elif material == 'Linen Blackout' or material == 'Linen Non Blackout':
+                price = klinen * val
+                price = price * multiplier
+        
+        # Kronille Vitrase Calculations
+        elif category == 'Kronille' and material == 'Vitrase':
+            vhelai = lebar / 50
+            vehali = round(vehali, 1)
+            vdecimal = vhelai % 1
+            voddeven = vhelai % 2
+            if vdecimal > 3 or voddeven == 1:
+                val = math.ceil(vhelai/2.)*2
+            else:
+                val = math.floor(vhelai)
+            
+            # Calculations
+            price = 70000 * val
             price = price * multiplier
         
         submitted = st.form_submit_button('Harga')
