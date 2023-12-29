@@ -57,7 +57,7 @@ def run():
         
         # Helai Calculations NON 140 Smokring
         if category == 'Smokring' and (material == 'Blackout' or material == 'Linen Blackout' or material == 'Juliet' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
-            if decimal > 3 or oddeven == 1:
+            if decimal > 0.3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
@@ -78,7 +78,7 @@ def run():
         
         # Helai Calculations 140 Smokring
         elif category == 'Smokring' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard'):
-            if decimal < 4:
+            if decimal < 0.4:
                 val = math.floor(helai)
             else:
                 val = math.floor(helai) + 1
@@ -142,7 +142,7 @@ def run():
         
         # Kronille Calculations
         elif category == 'Kronille' and (material == 'Linen Blackout' or material == 'Linen Non Blackout' or material == 'Blackout'):
-            if decimal > 3 or oddeven == 1:
+            if decimal > 0.3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
@@ -161,7 +161,7 @@ def run():
             vehali = round(vehali, 1)
             vdecimal = vhelai % 1
             voddeven = vhelai % 2
-            if vdecimal > 3 or voddeven == 1:
+            if vdecimal > 0.3 or voddeven == 1:
                 val = math.ceil(vhelai/2.)*2
             else:
                 val = math.floor(vhelai)
