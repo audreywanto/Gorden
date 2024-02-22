@@ -11,28 +11,33 @@ def run():
     st.title('Hitungan Custom Gorden JJ Interior Collections PER Jendela')
     with st.form(key='form parameters'):
         category = st.selectbox('Tipe Gorden', ('Smokring', 'Kronille', 'Cantel S', 'Vitrase'))
-        material = st.selectbox('Bahan Gorden', ('Blackout', 'Linen Blackout', 'Juliet', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle', 'Vitrase'))
+        material = st.selectbox('Bahan Gorden', ('Blackout Doft Doft', 'Blackout Doft Shiny', 'Linen Blackout', 'Juliet', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Java Shiren', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle', 'Vitrase', 'Micro'))
         lebar = st.number_input('Lebar', 0, 9999, 130, help='Ukuran dalam cm')
         tinggi = st.number_input('Tinggi', 0, 9999, 230, help='Ukuran dalam cm')
         
         st.markdown('---')
         
         # Base price
-        blackout = 165000
-        linenbo = 275000
+        blackoutdoft = 165000
+        blackoutshiny = 130000
+        linenbo = 270000
         juliet = 185000
-        silk = 115000
-        slub = 125000
-        mos = 115000
-        sya = 125000
-        linen = 120000
-        jacquard = 89000
+        silk = 128000
+        slub = 123000
+        mos = 113000
+        sya = 113000
+        shiren = 99000
+        linen = 125000
+        jacquard = 99000
         amaro = 165000
         otis = 165000
         firework = 165000
         waffle = 165000
         klinen = 100000
-        kblackout = 120000
+        kblackoutdoft = 130000
+        kblackoutshiny = 120000
+        kmicro = 80000
+        ringmicro = 120000
         
         # Base Calculations
         helai = lebar / 70
@@ -56,15 +61,21 @@ def run():
             multiplier = 1.25
         
         # Helai Calculations NON 140 Smokring
-        if category == 'Smokring' and (material == 'Blackout' or material == 'Linen Blackout' or material == 'Juliet' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
+        if category == 'Smokring' and (material == 'Blackout Doft Doft' or material == 'Blackout Doft Shiny' or material == 'Linen Blackout' or material == 'Juliet' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
             if decimal > 0.3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
                 
             # Calculations
-            if material == 'Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle':
-                price = blackout * val
+            if material == 'Blackout Doft Doft':
+                price = blackoutdoft * val
+                price = price * multiplier
+            elif material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle':
+                price = amaro * val
+                price = price * multiplier
+            elif material == 'Blackout Doft Shiny':
+                price = blackoutshiny * val
                 price = price * multiplier
             elif material == 'Linen Blackout':
                 price = linenbo * val
@@ -77,33 +88,51 @@ def run():
                 price = price * multiplier
         
         # Helai Calculations 140 Smokring
-        elif category == 'Smokring' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard'):
+        elif category == 'Smokring' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard' or material == 'Micro' or material == 'Java Shiren'):
             if decimal < 0.4:
                 val = math.floor(helai)
             else:
                 val = math.floor(helai) + 1
                 
             # Calculations
-            if material == 'Java Silk' or material == 'Java Mos':
+            if material == 'Java Silk':
                 price = silk * val
                 price = price * multiplier
-            elif material == 'Java Slub' or material == 'Java Sya':
+            elif material == 'Java Slub':
                 price = slub * val
+                price = price * multiplier
+            elif material == 'Java Mos':
+                price = mos * val
+                price = price * multiplier
+            elif material == 'Java Sya':
+                price = sya * val
+                price = price * multiplier
+            elif material == 'Java Shiren':
+                price = shiren * val
                 price = price * multiplier
             elif material == 'Jacquard':
                 price = jacquard * val
                 price = price * multiplier
+            elif material == 'Micro':
+                price = ringmicro * val
+                price = price * multiplier
         
         # Helai Calculations NON 140 Cantel S
-        elif category == 'Cantel S' and (material == 'Blackout' or material == 'Linen Blackout' or material == 'Juliet' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
+        elif category == 'Cantel S' and (material == 'Blackout Doft Doft' or material == 'Blackout Doft Shiny' or material == 'Linen Blackout' or material == 'Juliet' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
             if decimal > 0:
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
                 
             # Calculations
-            if material == 'Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle':
-                price = blackout * val
+            if material == 'Blackout Doft Doft':
+                price = blackoutdoft * val
+                price = price * multiplier
+            elif material == 'Blackout Doft Shiny':
+                price = blackoutshiny * val
+                price = price * multiplier
+            elif material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle':
+                price = amaro * val
                 price = price * multiplier
             elif material == 'Linen Blackout':
                 price = linenbo * val
@@ -116,18 +145,27 @@ def run():
                 price = price * multiplier
         
         # Helai Calculations 140 Cantel S
-        elif category == 'Cantel S' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard'):
+        elif category == 'Cantel S' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard' or material == 'Java Shiren'):
             if decimal > 0 :
                 val = math.floor(helai) + 1
             else:
                 val = math.floor(helai)
                 
             # Calculations
-            if material == 'Java Silk' or material == 'Java Mos':
+            if material == 'Java Silk':
                 price = silk * val
                 price = price * multiplier
-            elif material == 'Java Slub' or material == 'Java Sya':
+            elif material == 'Java Slub':
                 price = slub * val
+                price = price * multiplier
+            elif material == 'Java Mos':
+                price = mos * val
+                price = price * multiplier
+            elif material == 'Java Sya':
+                price = sya * val
+                price = price * multiplier
+            elif material == 'Java Shiren':
+                price = shiren * val
                 price = price * multiplier
             elif material == 'Jacquard':
                 price = jacquard * val
@@ -141,18 +179,24 @@ def run():
             price = price * multiplier
         
         # Kronille Calculations
-        elif category == 'Kronille' and (material == 'Linen Blackout' or material == 'Linen Non Blackout' or material == 'Blackout'):
+        elif category == 'Kronille' and (material == 'Micro' or material == 'Linen Non Blackout' or material == 'Blackout Doft Doft' or material == 'Blackout Doft Shiny'):
             if decimal > 0.3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
             
             # Calculations
-            if material == 'Blackout':
-                price = kblackout * val
+            if material == 'Blackout Doft Doft':
+                price = kblackoutdoft * val
                 price = price * multiplier
-            elif material == 'Linen Blackout' or material == 'Linen Non Blackout':
+            elif material == 'Linen Non Blackout':
                 price = klinen * val
+                price = price * multiplier
+            elif material == 'Micro':
+                price = kmicro * val
+                price = price * multiplier
+            elif material == 'Blackout Doft Shiny':
+                price = kblackoutshiny * val
                 price = price * multiplier
         
         # Kronille Vitrase Calculations
