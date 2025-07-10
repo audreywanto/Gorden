@@ -233,6 +233,7 @@ def run():
             # Calculations
             price = 125000 * val
             price = price * multiplier
+            formatted_price = "{:,.2f}".format(price)
             
         formatted_price = "{:,.2f}".format(price)
         submitted = st.form_submit_button('Harga')
