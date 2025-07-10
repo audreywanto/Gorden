@@ -10,7 +10,7 @@ st.set_page_config(
 def run():
     st.title('Hitungan Custom Gorden JJ Interior Collections PER Jendela')
     with st.form(key='form parameters'):
-        category = st.selectbox('Tipe Gorden', ('Smokring', 'Kronille', 'Cantel S', 'Vitrase'))
+        category = st.selectbox('Tipe Gorden', ('Smokring', 'Kronille', 'Cantel S', 'Vitrase'), help= 'Kronille hanya untuk Bahan Vitrase dan Linen Non Blackout')
         material = st.selectbox('Bahan Gorden', ('Blackout Doft Doft 230gsm', 'Blackout Doft Shiny 200gsm', 'Blackout Doft Doft 200gsm', 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)', 'Linen Blackout 100%', 'Juliet Blackout', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Java Shiren', 'Linen Non Blackout', 'Amaro', 'Otis', 'Vitrase', 'Micro'), help= 'Vitrase hanya bisa dihitung jika Tipe nya Vitrase atau Kronille')
         lebar = st.number_input('Lebar', 0, 9999, 130, help='Ukuran dalam cm')
         tinggi = st.number_input('Tinggi', 0, 9999, 230, help='Ukuran dalam cm')
@@ -193,30 +193,15 @@ def run():
             price = price * multiplier
         
         # Kronille Calculations
-        elif category == 'Kronille' and (material == 'Micro' or material == 'Linen Non Blackout' or material == 'Blackout Doft Doft 230gsm' or material == 'Blackout Doft Shiny 200gsm' or material == 'Blackout Doft Doft 200gsm' or material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)'):
+        elif category == 'Kronille' and material == 'Linen Non Blackout':
             if decimal > 0.3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
             
             # Calculations
-            if material == 'Blackout Doft Doft 230gsm':
-                price = kblackoutdoft * val
-                price = price * multiplier
-            elif material == 'Blackout Doft Shiny 200gsm':
-                price = blackoutshiny * val
-                price = price * multiplier
-            elif material == 'Blackout Doft Doft 200gsm':
-                price = blackout200 * val
-                price = price * multiplier
-            elif material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)':
-                price = blackoutDGPK * val
-                price = price * multiplier
-            elif material == 'Linen Non Blackout':
-                price = klinen * val
-                price = price * multiplier
-            elif material == 'Micro':
-                price = kmicro * val
+            if material == 'Linen Non Blackout':
+                price = linen * val
                 price = price * multiplier
         
         # Kronille Vitrase Calculations
