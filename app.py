@@ -10,8 +10,8 @@ st.set_page_config(
 def run():
     st.title('Hitungan Custom Gorden JJ Interior Collections PER Jendela')
     with st.form(key='form parameters'):
-        category = st.selectbox('Tipe Gorden', ('Smokring', 'Kronille', 'Cantel S', 'Vitrase'), help= 'Vitrase hanya bisa dihitung jika Tipe dan Bahan = Vitrase')
-        material = st.selectbox('Bahan Gorden', ('Blackout Doft Doft 230gsm', 'Blackout Doft Shiny 200gsm', 'Blackout Doft Doft 200gsm', 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)', 'Linen Blackout 100%', 'Juliet Blackout', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Java Shiren', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle', 'Vitrase', 'Micro'))
+        category = st.selectbox('Tipe Gorden', ('Smokring', 'Kronille', 'Cantel S', 'Vitrase'))
+        material = st.selectbox('Bahan Gorden', ('Blackout Doft Doft 230gsm', 'Blackout Doft Shiny 200gsm', 'Blackout Doft Doft 200gsm', 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)', 'Linen Blackout 100%', 'Juliet Blackout', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Java Shiren', 'Linen Non Blackout', 'Amaro', 'Otis', 'Vitrase', 'Micro'), help= 'Vitrase hanya bisa dihitung jika Tipe nya Vitrase atau Kronille')
         lebar = st.number_input('Lebar', 0, 9999, 130, help='Ukuran dalam cm')
         tinggi = st.number_input('Tinggi', 0, 9999, 230, help='Ukuran dalam cm')
         
@@ -29,7 +29,7 @@ def run():
         mos = 135000
         sya = 135000
         shiren = 99000
-        linen = 125000
+        linen = 90000
         jacquard = 110000
         amaro = 165000
         otis = 165000
@@ -189,7 +189,7 @@ def run():
         elif category == 'Vitrase':
             vhelai = lebar / 100
             vhelai = round(vhelai, 1)
-            price = 115000 * vhelai
+            price = 122500 * vhelai
             price = price * multiplier
         
         # Kronille Calculations
@@ -231,7 +231,7 @@ def run():
                 val = math.floor(vhelai)
             
             # Calculations
-            price = 125000 * val
+            price = 57500 * val
             price = price * multiplier
             formatted_price = "{:,.2f}".format(price)
             
