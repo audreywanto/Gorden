@@ -239,7 +239,7 @@ def run():
     
     if submitted:
         st.write('### Harga per Jendela Adalah:')
-        st.write('#### Rp.', formatted_price)
+        st.write('####', formatted_price)
                 
 if __name__ == '__main__':
     run()
