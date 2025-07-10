@@ -11,7 +11,7 @@ def run():
     st.title('Hitungan Custom Gorden JJ Interior Collections PER Jendela')
     with st.form(key='form parameters'):
         category = st.selectbox('Tipe Gorden', ('Smokring', 'Kronille', 'Cantel S', 'Vitrase'))
-        material = st.selectbox('Bahan Gorden', ('Blackout Doft Doft 230gsm', 'Blackout Doft Shiny 230gsm', 'Blackout Doft Doft 200gsm', 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)', 'Linen Blackout 100%', 'Juliet Blackout', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Java Shiren', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle', 'Vitrase', 'Micro'))
+        material = st.selectbox('Bahan Gorden', ('Blackout Doft Doft 230gsm', 'Blackout Doft Shiny 200gsm', 'Blackout Doft Doft 200gsm', 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)', 'Linen Blackout 100%', 'Juliet Blackout', 'Java Silk', 'Java Slub', 'Java Mos', 'Java Sya', 'Java Shiren', 'Linen Non Blackout', 'Jacquard', 'Amaro', 'Otis', 'Firework', 'Waffle', 'Vitrase', 'Micro'))
         lebar = st.number_input('Lebar', 0, 9999, 130, help='Ukuran dalam cm')
         tinggi = st.number_input('Tinggi', 0, 9999, 230, help='Ukuran dalam cm')
         
@@ -63,7 +63,7 @@ def run():
             multiplier = 1.25
         
         # Helai Calculations NON 140 Smokring
-        if category == 'Smokring' and (material == 'Blackout Doft Doft 230gsm' or material == 'Blackout Doft Shiny 230gsm' or material == 'Blackout Doft Doft 200gsm' or material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)' or material == 'Linen Blackout 100%' or material == 'Juliet Blackout' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
+        if category == 'Smokring' and (material == 'Blackout Doft Doft 230gsm' or material == 'Blackout Doft Shiny 200gsm' or material == 'Blackout Doft Doft 200gsm' or material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)' or material == 'Linen Blackout 100%' or material == 'Juliet Blackout' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
             if decimal > 0.3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
@@ -76,7 +76,7 @@ def run():
             elif material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle':
                 price = amaro * val
                 price = price * multiplier
-            elif material == 'Blackout Doft Shiny 230gsm':
+            elif material == 'Blackout Doft Shiny 200gsm':
                 price = blackoutshiny * val
                 price = price * multiplier
             elif material == 'Blackout Doft Doft 200gsm':
@@ -126,7 +126,7 @@ def run():
                 price = price * multiplier
         
         # Helai Calculations NON 140 Cantel S
-        elif category == 'Cantel S' and (material == 'Blackout Doft Doft 230gsm' or material == 'Blackout Doft Shiny 230gsm' or material == 'Blackout Doft Doft 200gsm' or material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)' or material == 'Linen Blackout 100%' or material == 'Juliet Blackout' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
+        elif category == 'Cantel S' and (material == 'Blackout Doft Doft 230gsm' or material == 'Blackout Doft Shiny 200gsm' or material == 'Blackout Doft Doft 200gsm' or material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)' or material == 'Linen Blackout 100%' or material == 'Juliet Blackout' or material == 'Linen Non Blackout' or material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle'):
             if decimal > 0:
                 val = math.ceil(helai/2.)*2
             else:
@@ -136,7 +136,7 @@ def run():
             if material == 'Blackout Doft Doft 230gsm':
                 price = blackoutdoft * val
                 price = price * multiplier
-            elif material == 'Blackout Doft Shiny 230gsm':
+            elif material == 'Blackout Doft Shiny 200gsm':
                 price = blackoutshiny * val
                 price = price * multiplier
             elif material == 'Blackout Doft Doft 200gsm':
@@ -193,7 +193,7 @@ def run():
             price = price * multiplier
         
         # Kronille Calculations
-        elif category == 'Kronille' and (material == 'Micro' or material == 'Linen Non Blackout' or material == 'Blackout Doft Doft 230gsm' or material == 'Blackout Doft Shiny 230gsm' or material == 'Blackout Doft Doft 200gsm' or material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)'):
+        elif category == 'Kronille' and (material == 'Micro' or material == 'Linen Non Blackout' or material == 'Blackout Doft Doft 230gsm' or material == 'Blackout Doft Shiny 200gsm' or material == 'Blackout Doft Doft 200gsm' or material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)'):
             if decimal > 0.3 or oddeven == 1:
                 val = math.ceil(helai/2.)*2
             else:
@@ -202,6 +202,9 @@ def run():
             # Calculations
             if material == 'Blackout Doft Doft 230gsm':
                 price = kblackoutdoft * val
+                price = price * multiplier
+            elif material == 'Blackout Doft Shiny 200gsm':
+                price = blackoutshiny * val
                 price = price * multiplier
             elif material == 'Blackout Doft Doft 200gsm':
                 price = blackout200 * val
@@ -214,9 +217,6 @@ def run():
                 price = price * multiplier
             elif material == 'Micro':
                 price = kmicro * val
-                price = price * multiplier
-            elif material == 'Blackout Doft Shiny':
-                price = kblackoutshiny * val
                 price = price * multiplier
         
         # Kronille Vitrase Calculations
@@ -231,15 +231,15 @@ def run():
                 val = math.floor(vhelai)
             
             # Calculations
-            price = 70000 * val
+            price = 125000 * val
             price = price * multiplier
-            formatted_price = "{:,.2f}".format(price)
-        
+            
+        formatted_price = "{:,.2f}".format(price)
         submitted = st.form_submit_button('Harga')
     
     if submitted:
         st.write('### Harga per Jendela Adalah:')
-        st.write('#### Rp.', price)
+        st.write('#### Rp.', formatted_price)
                 
 if __name__ == '__main__':
     run()
