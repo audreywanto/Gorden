@@ -100,7 +100,7 @@ def run():
             # Calculations
             if material == 'Blackout Doft Doft 230gsm':
                 price = blackoutdoft * val
-                price = price * multiplier
+                price = price * multiplier + 20000
             elif material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle':
                 price = amaro * val
                 price = price * multiplier + 20000
