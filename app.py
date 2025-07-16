@@ -163,28 +163,28 @@ def run():
             # Calculations
             if material == 'Blackout Doft Doft 230gsm':
                 price = blackoutdoft * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Blackout Doft Shiny 200gsm':
                 price = blackoutshiny * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Blackout Doft Doft 200gsm':
                 price = blackout200 * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Blackout Doft Doft 230gsm (Khusus Dark Grey/Pale Khaky)':
                 price = blackoutDGPK * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Amaro' or material == 'Otis' or material == 'Firework' or material == 'Waffle':
                 price = amaro * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Linen Blackout 100%':
                 price = linenbo * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Juliet Blackout':
                 price = juliet * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Linen Non Blackout':
                 price = linen * val
-                price = price * multiplier
+                price = price * multiplier + 50000
         
         # Helai Calculations 140 Cantel S
         elif category == 'Cantel S' and (material == 'Java Mos' or material == 'Java Silk' or material == 'Java Slub' or material == 'Java Sya' or material == 'Jacquard' or material == 'Java Shiren'):
@@ -196,22 +196,22 @@ def run():
             # Calculations
             if material == 'Java Silk':
                 price = silk * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Java Slub':
                 price = slub * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Java Mos':
                 price = mos * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Java Sya':
                 price = sya * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Java Shiren':
                 price = shiren * val
-                price = price * multiplier
+                price = price * multiplier + 50000
             elif material == 'Jacquard':
                 price = jacquard * val
-                price = price * multiplier
+                price = price * multiplier + 50000
         
         # Vitrase Calculations
         elif category == 'Vitrase':
