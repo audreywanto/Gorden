@@ -47,8 +47,30 @@ def run():
         oddeven = helai % 2
         
         # Height Calculations
-        if tinggi >= 300:
+        if tinggi >= 400:
+            multiplier = 3
+        elif tinggi >= 390:
+            multiplier = 2.9
+        elif tinggi >= 380:
+            multiplier = 2.8
+        elif tinggi >= 370:
+            multiplier = 2.7
+        elif tinggi >= 360:
+            multiplier = 2.6
+        elif tinggi >= 350:
+            multiplier = 2.5
+        elif tinggi >= 340:
+            multiplier = 2.4
+        elif tinggi >= 330:
+            multiplier = 2.3
+        elif tinggi >= 320:
+            multiplier = 2.2
+        elif tinggi >= 310:
+            multiplier = 2.1
+        elif tinggi >= 300:
             multiplier = 2
+        elif tinggi >= 290:
+            multiplier = 1.9
         elif tinggi >= 280:
             multiplier = 1.8
         elif tinggi >=  270:
