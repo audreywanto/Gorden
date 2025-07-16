@@ -90,7 +90,7 @@ def run():
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
-            if tinggi < 270:
+            if tinggi <= 270:
                 if val % 2 == 1:
                     val = val-1
                 
