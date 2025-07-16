@@ -19,27 +19,27 @@ def run():
         
         # Base price
         blackoutdoft = 190000
-        blackoutshiny = 130000
+        blackoutshiny = 170000
         blackoutDGPK = 230000
         blackout200 = 170000
         linenbo = 350000
         juliet = 320000
-        silk = 130000
+        silk = 135000
         slub = 140000
         mos = 135000
         sya = 135000
         shiren = 99000
-        linen = 90000
+        linen = 135000
         jacquard = 110000
         amaro = 170000
-        otis = 165000
+        otis = 170000
         firework = 165000
         waffle = 165000
-        klinen = 130000
-        kblackoutdoft = 140000
-        kblackoutshiny = 120000
-        kmicro = 80000
-        ringmicro = 120000
+        klinen = 110000
+        kblackoutdoft = 180000
+        kblackoutshiny = 165000
+        kmicro = 85000
+        ringmicro = 110000
         
         # Base Calculations
         helai = lebar / 70
