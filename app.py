@@ -90,7 +90,10 @@ def run():
                 val = math.ceil(helai/2.)*2
             else:
                 val = math.floor(helai)
-            if tinggi <= 270 and lebar < 240 and lebar > 160:
+            if tinggi <= 270 and lebar < 240 and lebar >= 160:
+                if val % 2 == 0:
+                    val = val - 1
+            if tinggi <= 270 and lebar < 350 and lebar >= 310:
                 if val % 2 == 0:
                     val = val - 1
                 
@@ -159,6 +162,9 @@ def run():
             if tinggi <= 270 and lebar < 240 and lebar > 160:
                 if val % 2 == 0:
                     val = val-1
+            if tinggi <= 270 and lebar < 350 and lebar >= 310:
+                if val % 2 == 0:
+                    val = val - 1
                 
             # Calculations
             if material == 'Blackout Doft Doft 230gsm':
