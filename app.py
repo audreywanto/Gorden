@@ -223,7 +223,7 @@ def run():
         elif category == 'Vitrase':
             vhelai = lebar / 100
             vhelai = round(vhelai, 1)
-            price = 122500 * vhelai
+            price = 130000 * vhelai
             price = price * multiplier
         
         # Kronille Calculations
@@ -250,7 +250,7 @@ def run():
                 val = math.floor(vhelai)
             
             # Calculations
-            price = 57500 * val
+            price = 85000 * val
             price = price * multiplier
             formatted_price = "{:,.2f}".format(price)
             
